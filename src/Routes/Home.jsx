@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Card from '../Components/Card'
 import { useState, useEffect } from 'react'
+import {ContextGlobal} from "../Components/utils/global.context";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 
