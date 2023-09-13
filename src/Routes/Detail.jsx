@@ -1,44 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { useGlobalContext } from '../Components/utils/global.context'; // Importa el hook del contexto
 
 const Detail = () => {
-  const [dentista, setDentista] = useState(null); 
+  const { dentistas } = useGlobalContext(); // Obtén los dentistas del contexto global
   const { dentistaId } = useParams();
-  const navigate = useNavigate();
 
-  useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/users/${dentistaId}`)
-      .then((response) => response.json())
-      .then((data) => {
-        setDentista(data); // Actualizar el estado con los datos del dentista
-      })
-      .catch((error) => {
-        console.error("Error al obtener el dentista");
-      });
-  }, [dentistaId]);
-
-  const handleGoBack = () => {
-    navigate("/");
-  };
+  // Encuentra el dentista específico en función del ID
+  const dentista = dentistas.find((dentista) => dentista.id === parseInt(dentistaId));
 
   return (
     <>
-      <h1>Detail Dentist id </h1>
-      {/* aquí deberán renderizar la información en detalle de un user en específico */}
-      {/* Deberán mostrar el name - email - phone - website por cada user en específico */}
+      <h1>Detail Dentist id {dentistaId}</h1>
       {dentista ? (
         <div>
           <p>ID: {dentista.id}</p>
           <p>Nombre: {dentista.name}</p>
           <p>Nombre de usuario: {dentista.username}</p>
-          {/* Mostrar otros detalles del dentista */}
           <p>Email: {dentista.email}</p>
           <p>Website: {dentista.website}</p>
           <p>Phone: {dentista.phone}</p>
-        </div>) : (
+        </div>
+      ) : (
         <p>Cargando información del dentista...</p>
       )}
-      <button onClick={handleGoBack}>Go Back</button>
+      <button onClick={() => window.history.back()}>Go Back</button>
     </>
   );
 };

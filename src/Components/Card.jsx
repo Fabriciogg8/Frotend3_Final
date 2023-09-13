@@ -1,9 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useFavoritesContext } from '../Components/utils/favorites.context';
 
 const Card = ({ name, username, id }) => {
+  const { favorites, dispatch } = useFavoritesContext();
+
+  const isFavorite = favorites.some(card => card.id === id);
+
   const addFav = () => {
     // Aqui iria la logica para agregar la Card en el localStorage
+    if (isFavorite) {
+      // Si ya es favorito, eliminarlo
+      dispatch({ type: 'REMOVE_FAVORITE', card: { id, name, username } });
+    } else {
+      // Si no es favorito, agregarlo
+      dispatch({ type: 'ADD_FAVORITE', card: { id, name, username } });
+    }
   };
 
   return (
@@ -17,8 +29,8 @@ const Card = ({ name, username, id }) => {
       </Link>
 
       {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-      <button onClick={addFav} className="favButton">
-        Add fav
+      <button onClick={addFav} className={`favButton ${isFavorite ? 'favActive' : ''}`}>
+        {isFavorite ? 'Remove fav' : 'Add fav'}
       </button>
     </div>
   );
