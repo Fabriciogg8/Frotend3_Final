@@ -8,16 +8,12 @@ import Contact from "./Routes/Contact";
 import Detail from "./Routes/Detail";
 import Favs from "./Routes/Favs";
 import Home from "./Routes/Home";
+import Layout from "./Components/Layout";
 
 function App() {
-
-  const { theme, toggleTheme } = useTheme();
   
-  
-  return (
-    
-                              
-      <div className={`App ${theme === themes.dark ? 'dark' : ''}`} > 
+  return (              
+      <Layout>  
         <Routes>
           <Route path="/" element={<Navbar />}>
             <Route path="/contact" element={<Contact />} />
@@ -28,9 +24,7 @@ function App() {
           </Route>
         </Routes>
         <Footer />
-      </div>
-     
-    
+      </Layout>
   );
 }
 
