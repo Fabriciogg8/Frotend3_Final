@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from '../Components/Card';
-import { useGlobalContext } from '../Components/utils/global.context'; // Importamos el nuevo hook
+import { useGlobalContext } from '../Components/utils/global.context'; 
+import "../Stylesheets/home.css"
 
 const Home = () => {
   // Usamos el hook useGlobalContext para obtener los dentistas del contexto

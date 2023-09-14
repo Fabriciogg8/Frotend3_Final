@@ -1,19 +1,13 @@
-import React, {
-  createContext,
-  useContext,
-  useMemo,
-  useState,
-  useEffect,
-} from "react";
+import React, { createContext, useContext, useMemo, useState, useEffect, useCallback } from "react";
 
 export const themes = {
   light: {
-    font: "black",
+    font: "#353535",
     background: "white",
   },
   dark: {
-    font: "white",
-    background: "black",
+    font: "#9b9b9b",
+    background: "#353535",
   },
 };
 
@@ -35,12 +29,6 @@ export function GlobalProvider({ children }) {
   const [theme, setTheme] = useState(themes.light);
   const [dentistas, setDentistas] = useState([]);
 
-  const handleChangeTheme = () => {
-    setTheme((prevTheme) =>
-      prevTheme === themes.light ? themes.dark : themes.light
-    );
-  };
-
   useEffect(() => {
     // Función para cargar los dentistas desde la API
     const loadDentistas = async () => {
@@ -61,16 +49,13 @@ export function GlobalProvider({ children }) {
     loadDentistas();
   }, []);
 
-  const toggleTheme = () => {
+  const toggleTheme = useCallback(() => {
     setTheme((prevTheme) =>
       prevTheme === themes.light ? themes.dark : themes.light
     );
-  };
-
-  const themeValue = useMemo(() => ({ theme, toggleTheme }), [
-    theme,
-    toggleTheme,
-  ]);
+  }, [setTheme]);
+  
+  const themeValue = useMemo(() => ({ theme, toggleTheme }), [theme, toggleTheme]);
 
   const dentistasValue = useMemo(() => ({ dentistas }), [dentistas]);
 

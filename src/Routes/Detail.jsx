@@ -1,31 +1,38 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import { useGlobalContext } from '../Components/utils/global.context'; // Importa el hook del contexto
+import React from "react";
+import { useParams } from "react-router-dom";
+import { useGlobalContext } from "../Components/utils/global.context"; // Importa el hook del contexto
+import "../Stylesheets/detail.css"
 
 const Detail = () => {
   const { dentistas } = useGlobalContext(); // Obtén los dentistas del contexto global
   const { dentistaId } = useParams();
 
   // Encuentra el dentista específico en función del ID
-  const dentista = dentistas.find((dentista) => dentista.id === parseInt(dentistaId));
+  const dentista = dentistas.find(
+    (dentista) => dentista.id === parseInt(dentistaId)
+  );
 
   return (
-    <>
-      <h1>Detail Dentist id {dentistaId}</h1>
+    <div className="detail-container">
+      <h1 className="detail-title">Detail Dentist id {dentistaId}</h1>
       {dentista ? (
         <div>
-          <p>ID: {dentista.id}</p>
-          <p>Nombre: {dentista.name}</p>
-          <p>Nombre de usuario: {dentista.username}</p>
-          <p>Email: {dentista.email}</p>
-          <p>Website: {dentista.website}</p>
-          <p>Phone: {dentista.phone}</p>
+          <p className="detail-paragraph">ID: {dentista.id}</p>
+          <p className="detail-paragraph">Name: {dentista.name}</p>
+          <p className="detail-paragraph">
+            Username: {dentista.username}
+          </p>
+          <p className="detail-paragraph">Email: {dentista.email}</p>
+          <p className="detail-paragraph">Website: {dentista.website}</p>
+          <p className="detail-paragraph">Phone: {dentista.phone}</p>
         </div>
       ) : (
-        <p>Cargando información del dentista...</p>
+        <p className="detail-paragraph">Cargando información del dentista...</p>
       )}
-      <button onClick={() => window.history.back()}>Go Back</button>
-    </>
+      <button className="detail-button" onClick={() => window.history.back()}>
+        Go Back
+      </button>
+    </div>
   );
 };
 

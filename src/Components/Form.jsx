@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../Stylesheets/form.css";
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -39,33 +40,41 @@ const Form = () => {
   };
 
   return (
+    <div className="form-container">
+  <form onSubmit={handleSubmit}>
     <div>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="fullName">Nombre completo:</label>
-          <input
-            type="text"
-            id="fullName"
-            name="fullName"
-            value={formData.fullName}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleInputChange}
-          />
-        </div>
-        <button type="submit">Enviar</button>
-      </form>
-      {error && <p>{error}</p>}
-      {successMessage && <p>{successMessage}</p>}
+      <label className="form-label" htmlFor="fullName">
+        Nombre completo:
+      </label>
+      <input
+        className="form-input"
+        type="text"
+        id="fullName"
+        name="fullName"
+        value={formData.fullName}
+        onChange={handleInputChange}
+      />
     </div>
+    <div>
+      <label className="form-label" htmlFor="email">
+        Email:
+      </label>
+      <input
+        className="form-input"
+        type="email"
+        id="email"
+        name="email"
+        value={formData.email}
+        onChange={handleInputChange}
+      />
+    </div>
+    <button className="form-button" type="submit">
+      Enviar
+    </button>
+  </form>
+  {error && <p className="form-error">{error}</p>}
+  {successMessage && <p className="form-success">{successMessage}</p>}
+</div>
   );
 };
 

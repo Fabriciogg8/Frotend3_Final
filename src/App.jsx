@@ -1,6 +1,5 @@
-import React , { useContext, useState }from "react";
+import React from "react";
 
-import { useTheme, ThemeProvider, themes } from "./Components/utils/global.context";
 import Footer from "./Components/Footer";
 import Navbar from "./Components/Navbar";
 import { Routes, Route } from "react-router-dom";
@@ -13,21 +12,19 @@ import Layout from "./Components/Layout";
 function App() {
   
   return (              
-      <Layout>  
+    <Layout>
+      <Navbar /> 
         <Routes>
-          <Route path="/" element={<Navbar />}>
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/detail/:dentistaId" element={<Detail />} />
-            <Route path="/favs" element={<Favs />} />
-            <Route path="/" element={<Home />} />
-            <Route path="*" element={<Home />} />
-          </Route>
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/detail/:dentistaId" element={<Detail />} />
+          <Route path="/favs" element={<Favs />} />
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Home />} />
         </Routes>
-        <Footer />
-      </Layout>
+    <Footer />
+  </Layout>
   );
 }
 
 export default App;
 
-// style={{background: themes.background, color:themes.font}}

@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
-import { Link, Outlet } from 'react-router-dom'
-import ThemeButton from './ThemeButton'
+import React from 'react';
+import { Link, Outlet } from 'react-router-dom';
+import ThemeButton from './ThemeButton';
+import "../Stylesheets/navBar.css";
 
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
 

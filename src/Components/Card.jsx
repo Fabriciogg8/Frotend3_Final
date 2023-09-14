@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useFavoritesContext } from '../Components/utils/favorites.context';
+import patientImage from '../images/doctor.jpg';
+import "../Stylesheets/card.css"
 
 const Card = ({ name, username, id }) => {
   const { favorites, dispatch } = useFavoritesContext();
@@ -23,6 +25,7 @@ const Card = ({ name, username, id }) => {
       {/* En cada card deberan mostrar en name - username y el id */}
       {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
       <Link to={`detail/${id}`} key={id}>
+        <img src={patientImage} alt={`Patient ${id}`} />
         <p>{id}</p>
         <p>{name}</p>
         <p>{username}</p>

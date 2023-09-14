@@ -1,0 +1,26 @@
+/* footer.css */
+
+/* Estilos para el elemento <footer> */
+.footer-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    bottom: 0;
+    width: 90%;
+    height: 40px;
+    margin-top: 2rem;
+  }
+  
+  /* Estilos para la imagen dentro del footer */
+  .footer-img {
+    width: 200px;
+    margin: 0;
+  }
+  
+  /* Estilos para el párrafo dentro del footer */
+  .footer-text {
+    margin: 0;
+    padding-top: 0.7rem;
+  }

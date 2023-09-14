@@ -1,0 +1,60 @@
+/* Estilo para la sección principal */
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px; /* Ajusta el espaciado según tus necesidades */
+    text-align: center;
+  }
+  
+  /* Estilo para el título */
+  .main h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px; /* Ajusta el tamaño del título según tus necesidades */
+  }
+  
+  /* Estilo para la cuadrícula de tarjetas */
+  .card-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  /* Estilo para cada tarjeta en la cuadrícula */
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: calc(20% - 50px);
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 0.5rem;
+    border: 0.5px solid rgb(136, 136, 136);
+    color: black;
+    text-align: center;
+  }
+  
+  .card img {
+    max-width: 80%;
+    height: auto;
+  }
+  
+  .favButton {
+    background-color: rgba(136, 136, 136, 0.116);
+    padding: 10px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    color: black;
+  }
+  
+  .favActive {
+    background-color: #cdd6ab;
+    color: rgba(0, 0, 0, 0.582);
+    font-weight: bold;
+  }
+  
+  .card a {
+    text-decoration: none;
+    color: black;
+  }
