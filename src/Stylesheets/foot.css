@@ -18,7 +18,10 @@
     width: 200px;
     margin: 0;
   }
-  
+  .footer-img-logo{
+    width: auto;
+    margin: 5px;
+  }
   /* Estilos para el párrafo dentro del footer */
   .footer-text {
     margin: 0;

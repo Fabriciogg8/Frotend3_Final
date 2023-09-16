@@ -1,38 +1,26 @@
 /* Navbar */
-
 nav {
-    padding: 1rem; /* Espaciado interno para los enlaces y el botón */
-    display: flex; /* Hace que los elementos se coloquen en una fila */
-    justify-content: space-between; /* Distribuye los elementos a lo largo del navbar */
-    align-items: center; /* Centra verticalmente los elementos */
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav ul {
-    list-style: none; /* Elimina los puntos de lista */
-    padding: 0; /* Elimina el espaciado interno de la lista */
-    display: flex; /* Hace que los elementos de la lista se coloquen en una fila */
+    list-style: none;
+    padding: 0;
+    display: flex;
 }
 
 nav ul li {
-    margin-right: 20px; /* Espacio entre los elementos de la lista */
+    margin-right: 20px;
 }
 
 nav a {
-    text-decoration: none; /* Quita la subrayado de los enlaces */
+    text-decoration: none;
 }
 
 nav a:hover {
-    text-decoration: underline; /* Subrayado en hover de los enlaces */
+    text-decoration: underline;
 }
 
-/* Estilos para el navbar en modo oscuro */
-.dark nav {
-    background-color: #445679c2; /* Color de fondo del navbar en el modo oscuro */
-    color: #fff; /* Color del texto en el navbar en el modo oscuro */
-    /* Agrega cualquier otro estilo adicional para el modo oscuro */
-}
-
-.light nav {
-    background-color: #333;
-    color: white;
-}

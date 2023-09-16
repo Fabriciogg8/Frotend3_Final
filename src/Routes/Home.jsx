@@ -4,11 +4,11 @@ import { useGlobalContext } from '../Components/utils/global.context';
 import "../Stylesheets/home.css"
 
 const Home = () => {
-  // Usamos el hook useGlobalContext para obtener los dentistas del contexto
+  // Uso el hook useGlobalContext para obtener los dentistas del contexto
   const { dentistas } = useGlobalContext();
 
   return (
-    <main className="">
+    <main className="main">
       <h1>Home</h1>
       <div className='card-grid'>
         {/* Mapeamos los dentistas y renderizamos las tarjetas */}

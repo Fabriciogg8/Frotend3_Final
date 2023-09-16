@@ -3,7 +3,7 @@ import { useTheme } from '../Components/utils/global.context'; // Importa el hoo
 import '../Stylesheets/themeButton.css'
 
 const ThemeButton = () => {
-  // Usamos el hook useTheme para obtener el tema y toggleTheme desde el contexto de tema
+  // Uso el hook useTheme para obtener el tema y toggleTheme desde el contexto de tema
   const { toggleTheme } = useTheme();
 
   return (

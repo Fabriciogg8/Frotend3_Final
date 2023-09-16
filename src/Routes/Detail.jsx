@@ -1,10 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useGlobalContext } from "../Components/utils/global.context"; // Importa el hook del contexto
+import { useGlobalContext } from "../Components/utils/global.context"; 
 import "../Stylesheets/detail.css"
 
 const Detail = () => {
-  const { dentistas } = useGlobalContext(); // Obtén los dentistas del contexto global
+  const { dentistas } = useGlobalContext(); // Obténgo los dentistas del contexto global
   const { dentistaId } = useParams();
 
   // Encuentra el dentista específico en función del ID

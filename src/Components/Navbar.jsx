@@ -11,12 +11,10 @@ const Navbar = () => {
     <>
     <nav className="">
       {/* Aqui deberan agregar los liks correspondientes a las rutas definidas */}
+      <img className="footer-img" src="./images/Logo.png" alt='DH-logo' />
       <ul>
         <li>
           <Link to="/">Home</Link> 
-        </li>
-        <li>
-          <Link to="/detail">Detail</Link> 
         </li>
         <li>
           <Link to="/favs">Favs</Link> 

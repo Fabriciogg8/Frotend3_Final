@@ -34,7 +34,7 @@ const Form = () => {
       return;
     }
 
-    // Si las validaciones pasan, mostramos el mensaje de éxito
+    // Si las validaciones pasan, muestro el mensaje de éxito
     setError("");
     setSuccessMessage(`Gracias ${formData.fullName}, te contactaremos cuando antes vía mail.`);
   };

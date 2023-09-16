@@ -10,7 +10,7 @@ const Card = ({ name, username, id }) => {
   const isFavorite = favorites.some(card => card.id === id);
 
   const addFav = () => {
-    // Aqui iria la logica para agregar la Card en el localStorage
+    // Aca la logica para agregar la Card en el localStorage
     if (isFavorite) {
       // Si ya es favorito, eliminarlo
       dispatch({ type: 'REMOVE_FAVORITE', card: { id, name, username } });
